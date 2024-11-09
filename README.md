@@ -1,6 +1,7 @@
 # Japanese: Natural Steps: Textbook for Japanese Language Learners
 
-This is a textbook for Japanese language learners. It is designed to help students learn Japanese through the study of Japanese literature. The textbook is based on the Japanese: Natural Japanese Word and Phrase Grammar Project.
+This is a textbook for Japanese language learners.
+The textbook is based on the Japanese: Natural Japanese Word and Phrase Grammar Project.
 
 ## Author
 
