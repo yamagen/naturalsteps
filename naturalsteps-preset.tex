@@ -1,0 +1,187 @@
+\usepackage{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{% hyperrefオプションリスト
+ setpagesize=false,
+ bookmarksnumbered=true,%
+ bookmarksopen=true,%
+ colorlinks=true,%
+ linkcolor=black,
+ citecolor=black,
+ urlcolor=black,
+}
+\usepackage{lmodern}
+\usepackage{framed}
+\usepackage{wrapfig}
+\usepackage{scalefnt}
+\usepackage{version,url,here}	% required for `\comment' (yatex added)
+\usepackage[dvipdfmx]{graphicx}	% required for `\includegraphics' (yatex added)
+\usepackage{nruby}
+\usepackage{natbib,url}
+\usepackage{makeidx}
+\usepackage{listings,plistings}
+\usepackage{color}
+\usepackage{xcolor}
+\lstloadlanguages{[LaTeX]TeX, sh}
+\colorlet{lstcolTeX}{green!50!black}
+\colorlet{lstcoltext}{black}
+\colorlet{lstcolshell}{blue!50!black}
+\usepackage{pdfpages}
+
+\newcounter{marginparcntbw}[chapter]
+\newcommand{\theMarginparcntbw}{$\dagger$\arabic{marginparcntbw}}
+\newcommand{\Marginparbw}[2][−10pt]{%
+  \stepcounter{marginparcntbw}%
+  \textsuperscript{\theMarginparcntbw}%
+  \protect\marginpar{\vskip#1\footnotesize%
+    \textsuperscript{\theMarginparcntbw}
+    {#2}\par}}
+
+
+\setlength{\fboxsep}{.5zw}
+\setlength{\fboxrule}{.6pt}
+
+\lstdefinestyle{shell}{language=sh, rulecolor=\color{lstcolshell!25}}
+\lstdefinestyle{TeX}{language=TeX, rulecolor=\color{lstcolTeX!25}}
+\lstdefinestyle{text}{language=TeX, rulecolor=\color{lstcoltext!25}}
+
+\lstset{% 
+language={C++}, 
+% backgroundcolor={\color[gray]{.85}},% 
+basicstyle={\small},% 
+identifierstyle={\small},% 
+%commentstyle={\small\ttfamily \color[rgb]{0,0.5,0}},% 
+%keywordstyle={\small\bfseries \color[rgb]{0,0,1}},% 
+ndkeywordstyle={\small},% 
+stringstyle={\small\ttfamily}, 
+frame={tb}, 
+breaklines=true, 
+columns=[l]{fullflexible},% 
+numbers=left,% 
+xrightmargin=0zw,% 
+xleftmargin=3zw,% 
+numberstyle={\scriptsize},% 
+stepnumber=1, 
+numbersep=1zw,% 
+morecomment=[l]{//}% 
+} 
+
+%\usepackage[format=hang,labelsep=colon,margin=10pt,sc,small]{caption}
+\bibpunct[:\,]{(}{)}{,}{a}{}{,}
+\definecolor{royalblue}{rgb}{0.0, 0.14, 0.4}
+\newcommand{\colorrule}[1]{%
+\begingroup\color{#1}\hrule\endgroup%
+}%
+\newcommand{\Colorrule}[1]{%
+\begingroup\color{#1}\rule{1\textwidth}{2.4pt}\endgroup%
+}%
+\newcommand{\TColorrule}[1]{%
+\begingroup\color{#1}\rule[2pt]{1\textwidth}{.6pt}\endgroup%
+}%
+
+\usepackage{ascmac}	% required for `\boxnote' (yatex added)
+\usepackage{framed}
+\usepackage{color}
+
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+
+\newtheorem{theo}{定理}[section]
+\newtheorem{defi}{定義}[section]
+\newtheorem{lemm}{補題}[section]
+
+\makeatletter
+\renewenvironment{leftbar}{%
+%  \def\FrameCommand{\vrule width 3pt \hspace{10pt}}%  デフォルトの線の太さは3pt
+  \def\FrameCommand{\vrule width 1pt \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\makeatother
+
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{red}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\newenvironment{lightgrayleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width .5zw} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+
+
+\AtBeginDvi{\special{papersize=\the\paperwidth,\the\paperheight}}
+
+\newcommand{\mini}[2]{%
+\setbox0=\hbox{\tt#1}\dp0=4pt%
+\setbox1=\hbox{\tiny#2}\ht1=4pt\dp1=7pt%
+\leavevmode\vtop{\offinterlineskip\box0\box1}}
+
+\ifEnglish
+\renewcommand{\lstlistlistingname}{List of Source codes}
+\else
+\renewcommand{\lstlistlistingname}{プログラム一覧}
+\fi
+
+
+\newcounter{excount}
+\setcounter{excount}{0}
+\newcounter{kdcount}
+\setcounter{kdcount}{0}
+\newcounter{ancount}
+\setcounter{ancount}{0}
+\newcounter{notecnt} % grammar note counter
+\setcounter{notecnt}{0}
+\newcounter{columncnt}
+\setcounter{columncnt}{0}
+
+\newenvironment{note}{%
+\refstepcounter{notecnt}
+\begin{itemize}
+\ifEnglish
+ \item[N.\thenotecnt]
+
+\else
+ \item[N.\thenotecnt] 
+ \fi
+}{%
+\end{itemize}
+%\vspace{1\baselineskip}
+}
+
+\newenvironment{toiquestion}{%
+\refstepcounter{excount}
+\begin{itemize}
+\ifEnglish
+ \item[Q.\theexcount]
+\else
+ \item[問\theexcount] 
+ \fi
+}{%
+\end{itemize}
+%\vspace{1\baselineskip}
+\vspace{.0\baselineskip}
+}
+
+\newenvironment{toianswer}{%
+\begin{itemize}
+\ifEnglish
+ \item[A.\theexcount]
+\else
+ \item[答\theexcount] 
+ \fi
+}{%
+\end{itemize}
+\vspace{.0\baselineskip}
+}
+
+\newenvironment{instruction}{%
+\begin{description}
+\ifEnglish
+ \item[Guide]
+\else
+
+ \item[指導法] 
+ \fi
+}{%
+\end{description}
+\vspace{1\baselineskip}
+}
+
