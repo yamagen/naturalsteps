@@ -3,6 +3,8 @@
 This is a textbook for Japanese language learners.
 The textbook is based on the Japanese: Natural Japanese Word and Phrase Grammar Project.
 
+![Natural Steps](img/2021ushism.jpg)
+
 ## Author
 
 Hilofumi Yamamoto, Ph.D. Institute of Science Tokyo.
