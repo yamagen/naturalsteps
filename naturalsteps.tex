@@ -104,6 +104,10 @@
 %\POSTSCRIPTtrue
 \POSTSCRIPTfalse
 
+\newif\ifREFERENCE
+\REFERENCEtrue
+\REFERENCEfalse
+
 \input{naturalsteps-preset.tex}
 %\input{non-mooc-preset.tex}
 
@@ -141,12 +145,12 @@
 %\NATURALSPEAKINGPARTTHREEfalse
 \STRATEGICPATTERNStrue
 %\STRATEGICPATTERNSfalse
-\GRAMMARNOTEStrue
-%\GRAMMARNOTESfalse
-\TASKSHEETStrue
-%\TASKSHEETSfalse
-\CHARTSANDLISTStrue
-%\CHARTSANDLISTSfalse
+%\GRAMMARNOTEStrue
+\GRAMMARNOTESfalse
+%\TASKSHEETStrue
+\TASKSHEETSfalse
+%\CHARTSANDLISTStrue
+\CHARTSANDLISTSfalse
 \BACKPAGEStrue
 %\BACKPAGESfalse
 \INDEXtrue
@@ -155,8 +159,8 @@
 %\ABSTfalse
 \TASKtrue
 %\TASKfalse
-\NOTESPACEtrue
-%\NOTESPACEfalse
+%\NOTESPACEtrue
+\NOTESPACEfalse
 \PREFACEtrue
 %\PREFACEfalse
 %\VOICEtrue
@@ -1149,11 +1153,15 @@ Besides, if you include food packages, signs on the streets, menus, etc., you wi
 \ifEnglish
 If you do not feel the need to rely on a grammar book, you do not need to use any.
 A reference book which includes many examples sentences is recomended since the grammar description alone will not explain you how to use it.
+\ifREFERENCE
 \cite{Kaiser_Butler200103} is one of the choices we recommend as a dictionary which includes significant examples.
+\fi
 \else
 文法書に頼る必要性を感じなければ、何も使わなくてもよい。
 文法だけを見ても使い方はわからないので、例文が多く書かれている参考書が良い。
+\ifREFERENCE
 \cite{Kaiser_Butler200103}は実際の新聞記事より採取した例文が掲載されている数少ない選択肢の1つである。
+\fi
 \fi
 
 \ifEnglish
@@ -2508,9 +2516,9 @@ Greeting is a very important conversation, but unfortunately it can't be used mo
 「あいさつ」はとても重要な会話であるが、残念ながら何回も使えないし、何回もすると奇妙である。
 \fi
 \ifEnglish
-If you partner many conversations with a list of adjectives(\S \ref{adjectives}), you will feel like you speak naturally.
+If you partner many conversations with a list of adjectives, you will feel like you speak naturally.
 \else
-形容詞のリスト(\S \ref{adjectives})を見ながら、何回もやり取りすると話した感がある。
+形容詞のリストを見ながら、何回もやり取りすると話した感がある。
 \fi
 \ifEnglish
 This practice should also be done at a fast pace so as not to stagnate, and should be done like a game.
@@ -4257,11 +4265,11 @@ Write down what you want to tell, experiences, events you want to mention, such 
 \ifEnglish
 When referring to a past event with a verb, use the past tense of the verb.
 The formation of the past tense of verbs is the same as the formation of the te-form of verbs, except that ``te'' is replaced with ``ta.''
-$\rightarrow$  \S\,\ref{te-form}, Table\,\ref{tab:teform}
+%$\rightarrow$  \S\,\ref{te-form}, Table\,\ref{tab:teform}
 \else
 過去の出来事を動詞で言うときは、動詞の時制を過去にします。
 動詞の過去形の作り方は、「て」を「た」に置き換える点以外は動詞のテ形の作り方と同じである。
-$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
+%$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
 \fi
 \end{note}
 
@@ -4502,7 +4510,7 @@ We will find that {\it tsukuru\/} is in the I group since its nai-form is {\it t
 Since the dictionary form of {\it iku\/}(go) ends with {\it ku\/}, {\it iku\/}, if you exactly follow the rules, it should be {\it iita\/}, but it conjugates irregulary {\it itta\/}, and its polite past form is {\it ikimashita\/}.
 Since {\it suru\/}(do) is a group III verb, it becomes {\it shita, shimashita\/}.
 Since {\it kuru\/}(come) is also a group III verb, it becomes {\it kita, kimashita\/}.
-$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
+%$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
 \else
 「見る」はIIグループの動詞なので、「見た、見ました」。
 「読む」はIグループの「む」が辞書形の動詞なので、「読んだ、読みました」。
@@ -4513,7 +4521,7 @@ $\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
 「行く」はIグループの「く」が辞書形の動詞なので、ルール通りならば、「行いた」となるはずであるが、「いいた」は「いた」と区別しにくいので、例外的に「行った」になり、「行った、行きました」。
 「する」はIIIグループの動詞なので、「した、しました」。
 「来る」はIIIグループの動詞なので、「来た、来ました」。
-$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
+%$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
 \fi
 \end{toianswer}
 
@@ -4679,10 +4687,10 @@ Also, observe what words are used when inviting someone.
 You will learn casual and formal style using volitional verb form:
 {\it tabe ni iko\/} (let's go to eat) is pronounced with {\it tabeiko\/} ({\it ni\/} is dropped and the word form is shortened), and {\it tabeyou\/} is shortend such as {\it tabeyo\/} which is a volitional form.
 The contracted form is just how it sounds when it is actually pronounced, and it is convenient to learn how to make conjugations by learning it with its hiragana spellings.
-See grammar notes for how to make intentional forms.$\rightarrow$ \S\ref{gn:volitional}
+See grammar notes for how to make intentional forms.%$\rightarrow$ \S\ref{gn:volitional}
 \else
 意向形のカジュアル・スタイルとフォーマル・スタイルを学ぶ。
-意向形の作り方は、Grammar notes (\S\ref{gn:volitional})を参照のこと。
+意向形の作り方は、Grammar notes を参照のこと。%(\S\ref{gn:volitional})
 「食べに行こう」は「たべいこ」、「食べよう」は「たべよ」として発音されることが多い。
 「食べ行きましょう」は「食べいきましょ」として発音される。
 縮約形は実際に発音されるときの聞こえ方であるだけで、活用形の作り方を学ぶためには平仮名の綴りで覚えるのが便利である。
@@ -4718,7 +4726,7 @@ Convert the following verbs into volitional casual and formal style.
 \ifEnglish
 In the case of {\it taberu\/} (eat), adding {\it ni iku\/} to {\it tabe\/} before {\it masu\/} of {\it tabemasu\/} gives {\it tabe ni iku\/} (go to eat).
 Next, the volitional form of {\it iku\/} (go) is {\it ikou\/}, but if pronounced quickly, it becomes {\it iko\/}, and {\it u\/} is shortened and almost inaudible.
-See grammar notes for how to create volitional forms.$\rightarrow$\S\ref{gn:volitional}
+%See grammar notes for how to create volitional forms.$\rightarrow$\S\ref{gn:volitional}
 % {\bfseries taberu (eat) $\rightarrow$ tabeiko $\rightarrow$ tabeyo $\rightarrow$ tabemasho}
 
  {\it nomu\/} (drink) $\rightarrow$ {\it nomiiko\/} $\rightarrow$ {\it nomo\/} $\rightarrow$ {\it nomimasho\/};\\
@@ -4731,7 +4739,7 @@ See grammar notes for how to create volitional forms.$\rightarrow$\S\ref{gn:voli
 \else
 「食べる」の場合は、「食べます」の「ます」の前の形「食べ」に「に行く」を付けると「食べに行く」となる。
 次に「行く」の意向形は「行こう」であるが、速く発音すると「行こ」になり、「う」が短かくなり、ほとんど聞こえなくなる。
-意向形の作り方は\S\ref{gn:volitional}を参照のこと。
+%意向形の作り方は\S\ref{gn:volitional}を参照のこと。
 \fi
 \end{toianswer}
 
@@ -5568,13 +5576,13 @@ Convert the following i-adjectives into the negative form.
  \end{enumerate}
 \end{multicols}
 
-\begin{toianswer}
-\ifEnglish
-See \S\,\ref{gn:i-adj-past} for how to form the past tense of i-adjectives.
-\else
-イ形容詞の過去形の作り方は\S\,\ref{gn:i-adj-past}を参照する。
-\fi
-\end{toianswer}
+%\begin{toianswer}
+%\ifEnglish
+%%See \S\,\ref{gn:i-adj-past} for how to form the past tense of i-adjectives.
+%\else
+%%イ形容詞の過去形の作り方は\S\,\ref{gn:i-adj-past}を参照する。
+%\fi
+%\end{toianswer}
 
 \ifEnglish
 \subsection{Activity}
@@ -6341,13 +6349,13 @@ Convert the following verbs into negative form.
  \end{enumerate}
 \end{multicols}
 
-\begin{toianswer}
-\ifEnglish
-See \S\,\ref{gn:verb-negative} for how to form the negative form of a verb.
-\else
-動詞の否定形の作り方は、\S\,\ref{gn:verb-negative}を参照。
-\fi
-\end{toianswer}
+%\begin{toianswer}
+%\ifEnglish
+%See \S\,\ref{gn:verb-negative} for how to form the negative form of a verb.
+%\else
+%動詞の否定形の作り方は、\S\,\ref{gn:verb-negative}を参照。
+%\fi
+%\end{toianswer}
 
 \begin{toiquestion}
 \ifEnglish
@@ -8252,8 +8260,10 @@ $\rightarrow$ 表\,\ref{IGroup}
   \input{general-postscript.tex}
 \fi%POSTSCRIPT
 
+\ifREFERENCE
 \bibliographystyle{jecon}
 \bibliography{koten,testing}
+\fi
 
 \ifINDEX
   \printindex
