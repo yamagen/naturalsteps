@@ -16,14 +16,20 @@
 \def\fpicture{img/2021ushism.jpg}
 \def\moocfpica{\fbox{\includegraphics[trim=0 0 0 0,clip,height=0.67\hsize]{\fpicture}}}
 \def\moocfpicb{\fbox{\includegraphics[trim=0 0 0 0,clip,height=0.50\hsize]{\fpicture}}}
-\def\pictitle{A little girl with a cow}
+\def\pictitle{A little girl and a cow}
 \def\picauthor{Yoshio Yamamoto}
 
-% Japanese用の条件マクロ
+% Japanese用の条件マクロ \ifJPN が完了したら、削除すること。
 \newif\ifJapanese
 % 英語のスイッチ
 %\Japanesefalse
 \Japanesetrue
+
+% Japanese用の新しい条件マクロ
+\newif\ifJPN
+% 英語のスイッチ
+%\JPNfalse
+\JPNtrue
 
 % Japanese用の条件マクロ
 \newif\ifEnglish
@@ -104,10 +110,6 @@
 %\POSTSCRIPTtrue
 \POSTSCRIPTfalse
 
-\newif\ifREFERENCE
-\REFERENCEtrue
-\REFERENCEfalse
-
 \input{naturalsteps-preset.tex}
 %\input{non-mooc-preset.tex}
 
@@ -145,12 +147,12 @@
 %\NATURALSPEAKINGPARTTHREEfalse
 \STRATEGICPATTERNStrue
 %\STRATEGICPATTERNSfalse
-%\GRAMMARNOTEStrue
-\GRAMMARNOTESfalse
-%\TASKSHEETStrue
-\TASKSHEETSfalse
-%\CHARTSANDLISTStrue
-\CHARTSANDLISTSfalse
+\GRAMMARNOTEStrue
+%\GRAMMARNOTESfalse
+\TASKSHEETStrue
+%\TASKSHEETSfalse
+\CHARTSANDLISTStrue
+%\CHARTSANDLISTSfalse
 \BACKPAGEStrue
 %\BACKPAGESfalse
 \INDEXtrue
@@ -159,8 +161,8 @@
 %\ABSTfalse
 \TASKtrue
 %\TASKfalse
-%\NOTESPACEtrue
-\NOTESPACEfalse
+\NOTESPACEtrue
+%\NOTESPACEfalse
 \PREFACEtrue
 %\PREFACEfalse
 %\VOICEtrue
@@ -202,78 +204,95 @@
 \chapter*{はじめに}
 \fi
 
-\ifJapanese
+\ifJPN
 本書は著者が東京科学大学で開講していた日本文化コース、ストラテジック・ジャパニーズの教科書「ストラテジック・ジャパニーズ」のうち、「自然な話し方」を抜き出した分冊である。
 \else
 This is a textbook that I wrote initially for the courses held at Institute of Science Tokyo {\itshape Strategic Japanese\/}.
 \fi
-\ifJapanese
-おそらく「自然な話し方」を達成するためには、2つの自然なアプローチが必要であろう。
-1つは、会話自体が自然であること、もう1つは学び方が自然であることである。
+\ifJPN
+おそらく「自然な話し方」を達成するためには、2つの自然なアプローチが必要である。
+1つは、会話自体が自然なことと、学び方が自然であること。
 \else
 Perhaps two natural approaches are needed to achieve {\it Natural speaking\/}:
 one is that the conversation itself is natural; and the other is that the way of learning is natural.
 \fi
-\ifEnglish
-This book, ``Japanese: Natural Steps; How to Speak Naturally,'' does not explain the rules of sentence structure and word order in detail.
+\ifJPN
+「自然な話し方」を身に着けるには、は従来、文型、語順というルールを一旦、忘れ、現実の語順を十分に観察すること。
 \else
-「自然な話し方」は文型、語順というルールをあえて無視すること。
+To acquire {\it Natural speaking\/}, it is necessary to forget the rules of grammar and word order for a while and observe the actual word order carefully.
 \fi
-\ifEnglish
-On the other hand, ignoring the word order in a phrase or using verbs without conjugating them correctly can make a big difference in the meaning and not convey what you want to say, so these are explained in detail and stressed to be practiced.
+\ifJPN
+一方、句の中の語順は厳格で、動詞の活用は正確でなければならない。
+そのルールを守らないと、意味が大きく変わってしまう。
 \else
-一方、句の中の語順を無視すること、動詞を正確に活用しないで使うことは、意味が大きく違ってしまい、言いたいことが伝達できないので、これらについては詳しく説明し、練習するように強調している。
+On the other hand, the word order in phrases is strict, and verb conjugations must be accurate.
+If you do not follow these rules, the meaning will change significantly.
 \fi
-\ifEnglish
-If you keep this in mind, you can speak Japanese relatively freely.
-\else
+\ifJPN
 このことを押さえておけば、日本語は比較的自由に話せる。
+\else
+If you keep this in mind, you can speak Japanese relatively freely.
 \fi
 
-\ifEnglish
-Skills are developed gradually by working a little harder and improving a little more, but when I look at a beginner's textbook, it contains long sentences that students cannot seem to remember.
+\ifJPN
+話す技術は少しずつだんだん上手になっていくものなのに、初級の教科書を見ると、とうてい覚えられない長い文が紹介されている。
 \else
-技術は少しずつ難しくしてだんだん上手になっていくものなのに、初級の教科書を見ると、とうてい覚えられそうもないような長い文が出てくる。
+Speaking skills gradually improve little by little, but when you look at beginner textbooks, you will find long sentences that you can't remember.
 \fi
-\ifEnglish
-We cannot remember it, so we cannot say it.
+\ifJPN
+もちろん、そんなに長い文、覚えられないし、言えるはずもない。
 \else
-覚えられないのだから、言えるはずもない。
+Of course, you can't remember or say such long sentences.
 \fi
-\ifEnglish
-Difficulty in conversation and pronunciation is a problem not on the learning side, but on the teaching side.
+\ifJPN
+会話が難しいとか発音が難しいとかは、学ぶ側の問題ではなく、教える側の問題である。
 \else
-会話が難しいとか発音が難しいとかは、学ぶ側の問題ではなく、教える側の問題だ。
+The difficulty of conversation or pronunciation is not a problem on the learner's side, but on the teacher's side.
 \fi
-\ifEnglish
-It makes students uneasy and deprives them of their self-confidence because teachers have not analyzed the reality of what it means for students to really open their mouths.
+\ifJPN
+本当に口を開くとはどういうことなのか、その現実を教育者が分析していないから、学生は不安になり、話せなくなる。
 \else
-教師が本当に口を開くとはどういうことなのか、その現実を分析していないから、学生に不安を与え、学生の自信を奪う。
+Because educators have not analyzed what it really means to open their mouths, students become anxious and unable to speak.
 \fi
-\ifEnglish
-The lack of analysis of conversational scenes by teachers can also be inferred from the fact that teachers treat students in the early stages of language learners as if they were children.
-\else
+\ifJPN
 教師の会話場面の分析不足は、教師が言語学習初期の学生を子供のように扱うことからも推測できる。
-\fi
-\ifEnglish
-Short utterances are not childish.
 \else
+The lack of analysis of the teacher's conversation scene can be inferred from the fact that teachers treat students in the early stages of language learning like children.
+\fi
+\ifJPN
 短い発話は、子供っぽい言い方ではない。
-\fi
-\ifEnglish
-Childishness is in the content to be dealt with.
 \else
-子供っぽさは扱う内容にある。
+Short utterances are not childish expressions.
 \fi
-\ifEnglish
-There are many short forms of communication in the contents done by adults.
+\ifJPN
+ある教師は、短い発話は子供っぽいと言っていた。
 \else
+One teacher said that short utterances are childish.
+\fi
+\ifJPN
+ 「たべる」「くる」「うん、いく」「まだ、しない」などの短い発話は、子供っぽいということらしい。 
+\else
+Short utterances such as ``eat,'' ``come,'' ``yes, go,'' and ``not yet, not do'' seem to be considered childish.
+\fi
+\ifJPN
+しかし、これは間違い。
+大人であっても、このような短い発話を日常的に使っている。
+\else
+However, this is a mistake.
+Even adults use such short utterances in everyday life.
+\fi
+\ifJPN
 大人の文脈で短く表現されるコミュニケーションはいくらでもある。
-\fi
-\ifEnglish
-It is the teacher's responsibility to extract that from the reality and show students the scenes that are needed for them.
+言い方が子供っぽいのではない。
+子供っぽさは内容にある。
 \else
+There are many communications expressed briefly in an adult context.
+It is not the way of speaking that is childish.
+Childishness is in the content.
+\fi
+\ifJPN
 その現実を取り出し、必要とされる場面を見せることが教師の仕事だと考えている。
+\else
 \fi
 
 \vspace*{1\baselineskip}
@@ -704,39 +723,43 @@ Also, consider which is the most commonly used form.
 \section{文法の学び方}
 \fi
 
-\ifEnglish
-Learn from commonly used verbs and commonly used forms. You don't need to learn all the conjugated forms since not all of them are used.
-\else
+\ifJPN
 よく使われる動詞、よく使われる形から学ぶこと。
 すべての活用形が同じ頻度で使われるわけではないので、活用形のすべてを覚える必要はない。
-\fi
-\ifEnglish
-Don't just learn words and expressions because they are frequent, but learn the order in which they are easy to remember and the techniques for remembering them.
 \else
+Learn from frequently used verbs and frequently used forms.
+Not all conjugations are used with the same frequency, so you don't need to remember all the conjugations.
+\fi
+\ifJPN
+たとえば、「買う」の否定形を覚えるのではなく、「買わない」を覚え、練習する。
+\else
+For example, instead of learning the negative form of ``kau (buy),'' learn and practice ``kawanai (not buy).''
+\fi
+\ifJPN
 単に頻度が高いからという理由で学ぶのではなく、覚えやすい順番と覚え方の技術を身につけること。
-\fi
-\ifEnglish
-Find a form that you can use immediately, and use it immediately before you forget it. Repeat this.
 \else
-すぐに使える形を見つけ、忘れる前にすぐ使う。
-これを繰り返す。
+Learn not just because it is frequently used, but also learn the order and method of memorization that is easy to remember.
+\fi
+\ifJPN
+すぐに使える形を見つけ、忘れる前にすぐ使う。これを繰り返す。
+\else
+Find a form that you can use immediately and use it right away before you forget it. Repeat this.
 \fi
 
 \begin{toiquestion}
-\ifEnglish
-Check out the following words in Japanese: `go', `come', `eat', `is', and `do'.
-Think and practice how to remember these five verbs right now.
-\else
+\ifJPN
 「行く」「来る」「食べる」「いる」「する」は日本語で何というかを調べなさい。
 この5つの動詞を今すぐ覚える方法を考え、実践してみなさい。
+\else
+Look up the Japanese words for ``go,'' ``come,'' ``eat,'' ``is,'' and ``do.''
+Think and practice how to remember these five verbs right now.
 \fi
 \end{toiquestion}
 
-
-\ifEnglish
-\subsection{Utterance}
-\else
+\ifJPN
 \subsection{発話}
+\else
+\subsection{Utterance}
 \fi
 
 \ifEnglish
@@ -1153,15 +1176,11 @@ Besides, if you include food packages, signs on the streets, menus, etc., you wi
 \ifEnglish
 If you do not feel the need to rely on a grammar book, you do not need to use any.
 A reference book which includes many examples sentences is recomended since the grammar description alone will not explain you how to use it.
-\ifREFERENCE
 \cite{Kaiser_Butler200103} is one of the choices we recommend as a dictionary which includes significant examples.
-\fi
 \else
 文法書に頼る必要性を感じなければ、何も使わなくてもよい。
 文法だけを見ても使い方はわからないので、例文が多く書かれている参考書が良い。
-\ifREFERENCE
 \cite{Kaiser_Butler200103}は実際の新聞記事より採取した例文が掲載されている数少ない選択肢の1つである。
-\fi
 \fi
 
 \ifEnglish
@@ -2516,9 +2535,9 @@ Greeting is a very important conversation, but unfortunately it can't be used mo
 「あいさつ」はとても重要な会話であるが、残念ながら何回も使えないし、何回もすると奇妙である。
 \fi
 \ifEnglish
-If you partner many conversations with a list of adjectives, you will feel like you speak naturally.
+If you partner many conversations with a list of adjectives(\S \ref{adjectives}), you will feel like you speak naturally.
 \else
-形容詞のリストを見ながら、何回もやり取りすると話した感がある。
+形容詞のリスト(\S \ref{adjectives})を見ながら、何回もやり取りすると話した感がある。
 \fi
 \ifEnglish
 This practice should also be done at a fast pace so as not to stagnate, and should be done like a game.
@@ -4265,11 +4284,11 @@ Write down what you want to tell, experiences, events you want to mention, such 
 \ifEnglish
 When referring to a past event with a verb, use the past tense of the verb.
 The formation of the past tense of verbs is the same as the formation of the te-form of verbs, except that ``te'' is replaced with ``ta.''
-%$\rightarrow$  \S\,\ref{te-form}, Table\,\ref{tab:teform}
+$\rightarrow$  \S\,\ref{te-form}, Table\,\ref{tab:teform}
 \else
 過去の出来事を動詞で言うときは、動詞の時制を過去にします。
 動詞の過去形の作り方は、「て」を「た」に置き換える点以外は動詞のテ形の作り方と同じである。
-%$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
+$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
 \fi
 \end{note}
 
@@ -4510,7 +4529,7 @@ We will find that {\it tsukuru\/} is in the I group since its nai-form is {\it t
 Since the dictionary form of {\it iku\/}(go) ends with {\it ku\/}, {\it iku\/}, if you exactly follow the rules, it should be {\it iita\/}, but it conjugates irregulary {\it itta\/}, and its polite past form is {\it ikimashita\/}.
 Since {\it suru\/}(do) is a group III verb, it becomes {\it shita, shimashita\/}.
 Since {\it kuru\/}(come) is also a group III verb, it becomes {\it kita, kimashita\/}.
-%$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
+$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
 \else
 「見る」はIIグループの動詞なので、「見た、見ました」。
 「読む」はIグループの「む」が辞書形の動詞なので、「読んだ、読みました」。
@@ -4521,7 +4540,7 @@ Since {\it kuru\/}(come) is also a group III verb, it becomes {\it kita, kimashi
 「行く」はIグループの「く」が辞書形の動詞なので、ルール通りならば、「行いた」となるはずであるが、「いいた」は「いた」と区別しにくいので、例外的に「行った」になり、「行った、行きました」。
 「する」はIIIグループの動詞なので、「した、しました」。
 「来る」はIIIグループの動詞なので、「来た、来ました」。
-%$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
+$\rightarrow$ \S\,\ref{te-form}, Table\,\ref{tab:teform}
 \fi
 \end{toianswer}
 
@@ -4687,10 +4706,10 @@ Also, observe what words are used when inviting someone.
 You will learn casual and formal style using volitional verb form:
 {\it tabe ni iko\/} (let's go to eat) is pronounced with {\it tabeiko\/} ({\it ni\/} is dropped and the word form is shortened), and {\it tabeyou\/} is shortend such as {\it tabeyo\/} which is a volitional form.
 The contracted form is just how it sounds when it is actually pronounced, and it is convenient to learn how to make conjugations by learning it with its hiragana spellings.
-See grammar notes for how to make intentional forms.%$\rightarrow$ \S\ref{gn:volitional}
+See grammar notes for how to make intentional forms.$\rightarrow$ \S\ref{gn:volitional}
 \else
 意向形のカジュアル・スタイルとフォーマル・スタイルを学ぶ。
-意向形の作り方は、Grammar notes を参照のこと。%(\S\ref{gn:volitional})
+意向形の作り方は、Grammar notes (\S\ref{gn:volitional})を参照のこと。
 「食べに行こう」は「たべいこ」、「食べよう」は「たべよ」として発音されることが多い。
 「食べ行きましょう」は「食べいきましょ」として発音される。
 縮約形は実際に発音されるときの聞こえ方であるだけで、活用形の作り方を学ぶためには平仮名の綴りで覚えるのが便利である。
@@ -4726,7 +4745,7 @@ Convert the following verbs into volitional casual and formal style.
 \ifEnglish
 In the case of {\it taberu\/} (eat), adding {\it ni iku\/} to {\it tabe\/} before {\it masu\/} of {\it tabemasu\/} gives {\it tabe ni iku\/} (go to eat).
 Next, the volitional form of {\it iku\/} (go) is {\it ikou\/}, but if pronounced quickly, it becomes {\it iko\/}, and {\it u\/} is shortened and almost inaudible.
-%See grammar notes for how to create volitional forms.$\rightarrow$\S\ref{gn:volitional}
+See grammar notes for how to create volitional forms.$\rightarrow$\S\ref{gn:volitional}
 % {\bfseries taberu (eat) $\rightarrow$ tabeiko $\rightarrow$ tabeyo $\rightarrow$ tabemasho}
 
  {\it nomu\/} (drink) $\rightarrow$ {\it nomiiko\/} $\rightarrow$ {\it nomo\/} $\rightarrow$ {\it nomimasho\/};\\
@@ -4739,7 +4758,7 @@ Next, the volitional form of {\it iku\/} (go) is {\it ikou\/}, but if pronounced
 \else
 「食べる」の場合は、「食べます」の「ます」の前の形「食べ」に「に行く」を付けると「食べに行く」となる。
 次に「行く」の意向形は「行こう」であるが、速く発音すると「行こ」になり、「う」が短かくなり、ほとんど聞こえなくなる。
-%意向形の作り方は\S\ref{gn:volitional}を参照のこと。
+意向形の作り方は\S\ref{gn:volitional}を参照のこと。
 \fi
 \end{toianswer}
 
@@ -5576,13 +5595,13 @@ Convert the following i-adjectives into the negative form.
  \end{enumerate}
 \end{multicols}
 
-%\begin{toianswer}
-%\ifEnglish
-%%See \S\,\ref{gn:i-adj-past} for how to form the past tense of i-adjectives.
-%\else
-%%イ形容詞の過去形の作り方は\S\,\ref{gn:i-adj-past}を参照する。
-%\fi
-%\end{toianswer}
+\begin{toianswer}
+\ifEnglish
+See \S\,\ref{gn:i-adj-past} for how to form the past tense of i-adjectives.
+\else
+イ形容詞の過去形の作り方は\S\,\ref{gn:i-adj-past}を参照する。
+\fi
+\end{toianswer}
 
 \ifEnglish
 \subsection{Activity}
@@ -6349,13 +6368,13 @@ Convert the following verbs into negative form.
  \end{enumerate}
 \end{multicols}
 
-%\begin{toianswer}
-%\ifEnglish
-%See \S\,\ref{gn:verb-negative} for how to form the negative form of a verb.
-%\else
-%動詞の否定形の作り方は、\S\,\ref{gn:verb-negative}を参照。
-%\fi
-%\end{toianswer}
+\begin{toianswer}
+\ifEnglish
+See \S\,\ref{gn:verb-negative} for how to form the negative form of a verb.
+\else
+動詞の否定形の作り方は、\S\,\ref{gn:verb-negative}を参照。
+\fi
+\end{toianswer}
 
 \begin{toiquestion}
 \ifEnglish
@@ -8057,16 +8076,16 @@ Iグループは表\ref{tab:teform}を参考にするとよい。
 
 \item[verb-negative]
 \label{gn:verb-negative}
-\ifEnglish
-How to form the negative form of a verb:
-3G {\it kuru\/} (come)$\rightarrow${\it konai\/}, {\it suru\/} (do)$\rightarrow${\it shinai\/}.
-2G {\it ...ru\/}$\rightarrow${\it ...nai\/}, for example, {\it miru\/} (see)$\rightarrow${\it minai\/}, {\it taberu\/}$\rightarrow${\it tabenai\/}.
-1G {\it ...u\/}$\rightarrow${\it ...anai\/}, for example, {\it kaku\/} (write)$\rightarrow${\it kakanai\/}, {\it yomu\/}$\rightarrow${\it yomanai\/}. However, if 1G verb dictionary form ends with {\it ...au\/} then it is replaced with {\it ...wanai\/}, for example, {\it kau\/} (buy)$\rightarrow${\it kawanai\/}.
-\else
+\ifJPN
 動詞の否定形の作り方:
   3G「くる」$\rightarrow$「こない」、「する」$\rightarrow$「しない」。
   2G「...ru」$\rightarrow$「...nai」、たとえば、「見る」$\rightarrow$「見ない」、「食べる」$\rightarrow$「食べない」。
   1G「...u」$\rightarrow$「...anai」、たとえば、「書く」$\rightarrow$「書かない」、「買う」$\rightarrow$「買わない」。
+\else
+How to form the negative form of a verb:
+3G {\it kuru\/} (come)$\rightarrow${\it konai\/}, {\it suru\/} (do)$\rightarrow${\it shinai\/}.
+2G {\it ...ru\/}$\rightarrow${\it ...nai\/}, for example, {\it miru\/} (see)$\rightarrow${\it minai\/}, {\it taberu\/}$\rightarrow${\it tabenai\/}.
+1G {\it ...u\/}$\rightarrow${\it ...anai\/}, for example, {\it kaku\/} (write)$\rightarrow${\it kakanai\/}, {\it yomu\/}$\rightarrow${\it yomanai\/}. However, if 1G verb dictionary form ends with {\it ...au\/} then it is replaced with {\it ...wanai\/}, for example, {\it kau\/} (buy)$\rightarrow${\it kawanai\/}.
 \fi
 
 \item[volitional form:] % 2022-08-17
@@ -8260,10 +8279,8 @@ $\rightarrow$ 表\,\ref{IGroup}
   \input{general-postscript.tex}
 \fi%POSTSCRIPT
 
-\ifREFERENCE
 \bibliographystyle{jecon}
 \bibliography{koten,testing}
-\fi
 
 \ifINDEX
   \printindex
